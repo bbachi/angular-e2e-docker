@@ -1,0 +1,20 @@
+version: '3'
+services:
+  smoke-tests:
+    image: bbachin1/protractor-e2e-tests
+    command: npm run e2e:smoke
+    container_name: smoke-tests
+    volumes:
+      - $PWD:/opt/protractor
+  uat-tests:
+    image: bbachin1/protractor-e2e-tests
+    command: npm run e2e:uat
+    container_name: uat-tests
+    volumes:
+      - $PWD:/opt/protractor
+  regression-tests:
+    image: bbachin1/protractor-e2e-tests
+    command: npm run e2e:regression
+    container_name: regression-tests
+    volumes:
+      - $PWD:/opt/protractor
